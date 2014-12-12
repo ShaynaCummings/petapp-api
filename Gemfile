@@ -9,6 +9,8 @@ gem 'spring', :group => :development
 
 gem 'feedjira'
 
+gem 'devise_token_auth'
+
 gem 'active_model_serializers'
 
 gem 'rspec'
