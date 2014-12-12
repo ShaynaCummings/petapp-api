@@ -9,6 +9,10 @@ gem 'spring', :group => :development
 
 gem 'feedjira'
 
+gem 'active_model_serializers'
+
+gem 'rspec'
+
 gem 'pg'
 
 
