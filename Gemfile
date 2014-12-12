@@ -1,19 +1,34 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
 
 gem 'rails', '4.2.0.beta2'
 
 gem 'rails-api'
 
-gem 'spring', :group => :development
+gem 'rack-cors', require: 'rack/cors'
 
+gem 'rails_12factor', group: :production
+
+# feed-related gems:
 gem 'feedjira'
-
-gem 'devise_token_auth'
-
 gem 'active_model_serializers'
+gem 'httparty'
 
-gem 'rspec'
+# auth gems:
+gem 'devise_token_auth'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+# testing:
+group :development, :test do
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'dotenv-rails'
+end
 
 gem 'pg'
 
