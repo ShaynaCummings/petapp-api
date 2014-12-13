@@ -9,8 +9,11 @@ class CreatePets < ActiveRecord::Migration
       t.string :sex
       t.string :adoption_date
       t.string :picture_url
+      t.belongs_to :user
+      t.belongs_to :veterinarian
 
       t.timestamps null: false
     end
   end
 end
+

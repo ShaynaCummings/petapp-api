@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20141212162628) do
   create_table "appointments", force: true do |t|
     t.datetime "appointment_date"
     t.string   "description"
+    t.integer  "pet_id"
+    t.integer  "veterinarian_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141212162628) do
     t.string   "name"
     t.string   "link_url"
     t.string   "description"
+    t.integer  "pet_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -38,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141212162628) do
     t.string   "vendor"
     t.datetime "date_incurred"
     t.datetime "date_paid"
+    t.integer  "pet_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -49,8 +53,10 @@ ActiveRecord::Schema.define(version: 20141212162628) do
     t.string   "dose_units"
     t.string   "description"
     t.string   "method"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "condition_id"
+    t.integer  "pet_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pets", force: true do |t|
@@ -62,8 +68,10 @@ ActiveRecord::Schema.define(version: 20141212162628) do
     t.string   "sex"
     t.string   "adoption_date"
     t.string   "picture_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "veterinarian_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: true do |t|
@@ -101,6 +109,7 @@ ActiveRecord::Schema.define(version: 20141212162628) do
     t.string   "practice_name"
     t.string   "phone_number"
     t.string   "email_address"
+    t.integer  "pet_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

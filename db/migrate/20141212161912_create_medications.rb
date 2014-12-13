@@ -7,6 +7,8 @@ class CreateMedications < ActiveRecord::Migration
       t.string :dose_units
       t.string :description
       t.string :method
+      t.belongs_to :condition
+      t.belongs_to :pet
 
       t.timestamps null: false
     end

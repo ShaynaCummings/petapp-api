@@ -7,6 +7,7 @@ class CreateCosts < ActiveRecord::Migration
       t.string :vendor
       t.datetime :date_incurred
       t.datetime :date_paid
+      t.belongs_to :pet
 
       t.timestamps null: false
     end

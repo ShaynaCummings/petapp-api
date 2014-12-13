@@ -4,6 +4,7 @@ class CreateConditions < ActiveRecord::Migration
       t.string :name
       t.string :link_url
       t.string :description
+      t.belongs_to :pet
 
       t.timestamps null: false
     end
