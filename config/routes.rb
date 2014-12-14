@@ -6,8 +6,12 @@ Rails.application.routes.draw do
     resources :appointments
     resources :conditions
     resources :costs
+    resources :veterinarians
+    resources :supplies
+    resources :medications
   end
 
+  resources :conditions, :medications, :veterinarians
 
 
   # The priority is based upon order of creation: first created -> highest priority.
