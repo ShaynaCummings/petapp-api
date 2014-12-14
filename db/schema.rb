@@ -61,12 +61,11 @@ ActiveRecord::Schema.define(version: 20141212162628) do
 
   create_table "pets", force: true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "category"
     t.string   "breed"
-    t.integer  "age_years"
-    t.integer  "age_months"
+    t.date     "birthdate"
     t.string   "sex"
-    t.string   "adoption_date"
+    t.date     "adoption_date"
     t.string   "picture_url"
     t.integer  "user_id"
     t.integer  "veterinarian_id"
