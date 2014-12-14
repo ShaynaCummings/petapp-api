@@ -5,6 +5,6 @@ class Pet < ActiveRecord::Base
   belongs_to :medication
   has_many :veterinarians, through: :appointments
   belongs_to :veterinarian
-  has_many :costs
+  has_many :expenses
   has_many :supplies
 end
