@@ -1,0 +1,16 @@
+class CreateMedications < ActiveRecord::Migration
+  def change
+    create_table :medications do |t|
+      t.string :name
+      t.string :rx_num
+      t.float :dose_amt
+      t.string :dose_units
+      t.string :description
+      t.string :method
+      t.belongs_to :condition
+      t.belongs_to :pet
+
+      t.timestamps null: false
+    end
+  end
+end
