@@ -3,6 +3,7 @@ class MedicationsController < ApplicationController
   before_action :find_medication, only: [:show, :update, :destroy]
 
   def index
+    @medications = @pet.medications
     render json: @medications.as_json
   end
 
