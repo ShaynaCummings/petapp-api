@@ -5,14 +5,26 @@ class Condition < ActiveRecord::Base
   has_many :medications
 
 
-  # methods for getting content from pedmd via Feedjira
+# # insane 'if' logic.. pass in a variable based on category here
 
-  # def fetch_conditions
-  #   url = %w[http://www.petmd.com/rss/cat.health]
-  #   feeds = Feedjira::Feed.fetch_and_parse url
-  #   feed = feeds['http://www.petmd.com/rss/cat.health']
-  #   @entries = feed.entries
-  # end
+#   if @pet.category == "cat"
+#   if @pet.category == "dog"
+#   if @pet.category == "bird"
+#   if @pet.category == "horse"
+#   if @pet.category == "fish"
+#   if @pet.category == "exotic"
+#   if @pet.category == "rabbit"
+#   if @pet.category == "ferret"
+#   if @pet.category == "reptile"
+
+#   # methods for getting content from petmd via Feedjira
+
+#    def fetch_conditions
+#      url = %w[http://www.petmd.com/rss/cat.health]
+#      feeds = Feedjira::Feed.fetch_and_parse url
+#      feed = feeds['http://www.petmd.com/rss/cat.health']
+#       @entries = feed.entries
+#    end
 
   # def display_conditions
   #   fetch_conditions
