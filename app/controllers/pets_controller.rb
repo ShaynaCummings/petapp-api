@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :find_pet, only: [:show, :edit, :update]
+  before_action :find_pet, only: [:show, :edit, :update, :destroy]
 
   def index
     @pets = Pet.all
@@ -34,7 +34,7 @@ private
   end
 
   def pets_params
-    #need to rewrite this eventually to include require(:pet)
+    #need to rewrite this eventually to include .require(:pet)
     #http://stackoverflow.com/questions/13745689/getting-rails-api-and-strong-parameters-to-work-together
     params.permit(:name, :category, :breed, :birthdate, :sex, :adoption_date, :picture_url, :user_id, :veterinarian_id)
   end
