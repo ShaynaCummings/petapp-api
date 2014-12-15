@@ -8,13 +8,17 @@ class PetsController < ApplicationController
   end
 
   def show
-    render json: @pet, include:   [:veterinarian,
+    render json: @pet, include:   [
+                                  :veterinarian,
+                                  :lengths,
+                                  :weights,
                                   :conditions,
-                                  :expenses,
-                                  # :medications,
+                                  :medications,
+                                  :vaccinations,
                                   # :appointments,
+                                  # :expenses,
                                   # :supplies
-                                ]
+                                  ]
   end
 
   def new
@@ -42,8 +46,7 @@ private
   def pets_params
     #need to rewrite this eventually to include .require(:pet)
     #http://stackoverflow.com/questions/13745689/getting-rails-api-and-strong-parameters-to-work-together
-    params.permit(:name, :category, :breed, :birthdate, :sex, :adoption_date, :picture_url, :user_id, :veterinarian_id)
+    params.permit(:name, :category, :breed, :birthdate, :sex, :adoption_date, :microchip_number, :picture_url, :user_id, :veterinarian_id)
   end
-
 
 end

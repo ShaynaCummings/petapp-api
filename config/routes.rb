@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   resources :pets do
     resources :appointments
     resources :conditions
-    resources :costs
     resources :veterinarians
-    resources :supplies
+    resources :vaccinations
     resources :medications
+    resources :lengths
+    resources :weights
   end
 
-  resources :conditions, :medications, :veterinarians
+#  and for the beta version
+  # resources :expenses
+  # resources :supplies
 
 
   # The priority is based upon order of creation: first created -> highest priority.

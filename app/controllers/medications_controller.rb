@@ -13,6 +13,11 @@ class MedicationsController < ApplicationController
   end
 
   def show
+    if params[:pet_id]
+      @pet = Pet.find(params[:pet_id])
+      find_medication
+      @medication = @pet.medication
+    end
     render json: @medication
   end
 

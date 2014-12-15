@@ -1,12 +1,16 @@
 class Pet < ActiveRecord::Base
   belongs_to :user
   has_many :conditions
-  has_many :medications, through: :conditions
-  belongs_to :medication
+  has_many :medications
+  has_many :vaccinations
+  has_many :lengths
+  has_many :weights
   has_many :veterinarians, through: :appointments
   belongs_to :veterinarian
-  has_many :expenses
-  has_many :supplies
+
+  # has_many :expenses
+  # has_many :supplies
+
 
 
   #   # methods for getting breeds from petmd via Feedjira

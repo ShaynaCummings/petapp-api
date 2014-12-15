@@ -35,6 +35,7 @@ pets = Pet.create([
     birthdate: '20110101',
     sex: 'male',
     adoption_date: '20110610',
+    microchip_number: '2378sdhs2327',
     veterinarian_id: 1
   },
 
