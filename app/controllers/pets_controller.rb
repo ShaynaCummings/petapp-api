@@ -8,7 +8,13 @@ class PetsController < ApplicationController
   end
 
   def show
-    render json: @pet
+    render json: @pet, include:   [:veterinarian,
+                                  :conditions,
+                                  :expenses,
+                                  # :medications,
+                                  # :appointments,
+                                  # :supplies
+                                ]
   end
 
   def new
