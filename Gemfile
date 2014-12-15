@@ -4,7 +4,7 @@ ruby '2.1.3'
 
 gem 'rails', '4.2.0.rc2'
 
-gem 'rails-api'
+gem 'rails-api', git: 'https://github.com/rails-api/rails-api.git', branch: 'master'
 
 gem 'rack-cors', require: 'rack/cors'
 

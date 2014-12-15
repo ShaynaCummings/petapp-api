@@ -1,23 +1,43 @@
 class PetsController < ApplicationController
+  before_action :find_pet, only: [:show, :edit, :update, :destroy]
 
-def index
-  @pets = Pet.all
+  def index
+    @pets = Pet.all
 
-  render json: @pets.as_json
-end
+    render json: @pets.as_json
+  end
 
-def show
-  @pet = Pet.find(params[:id])
+  def show
+    render json: @pet
+  end
 
-  render json: @pet
-end
+  def new
+    @pet = Pet.new
+  end
+
+  def create
+    @pet = Pet.create(pets_params)
+  end
+
+  def update
+    @pet.update(pets_params)
+  end
+
+  # def destroy
+  # end
 
 
 
 private
 
+  def find_pet
+      @pet = Pet.find(params[:id])
+  end
+
   def pets_params
-    params.require(:id).permit(:name, :type, :breed, :birthdate, :sex, :adoption_date, :picture_url, :user_id, :veterinarian_id)
+    #need to rewrite this eventually
+    #http://stackoverflow.com/questions/13745689/getting-rails-api-and-strong-parameters-to-work-together
+    params.permit(:name, :category, :breed, :birthdate, :sex, :adoption_date, :picture_url, :user_id, :veterinarian_id)
   end
 
 
