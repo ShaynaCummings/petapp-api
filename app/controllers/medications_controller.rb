@@ -1,4 +1,5 @@
 class MedicationsController < ApplicationController
+  before_action :find_medication, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:pet_id]
@@ -12,16 +13,34 @@ class MedicationsController < ApplicationController
   end
 
   def show
-    @medication = Medication.find(params[:id])
-
     render json: @medication
+  end
+
+  def new
+    @medication = Medication.new
+  end
+
+  def create
+    @medication = Medication.create(medication_params)
+  end
+
+  def update
+    @medication.update(medication_params)
+  end
+
+  def destroy
+    @medication.destroy
   end
 
 
   private
 
-  def medication_params
-    # params.require(:id).permit()
-  end
+    def find_medication
+      @medication = Medication.find(params[:id])
+    end
+
+    def medication_params
+      # params.require(:id).permit()
+    end
 
 end
