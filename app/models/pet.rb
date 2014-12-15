@@ -5,6 +5,7 @@ class Pet < ActiveRecord::Base
   has_many :vaccinations
   has_many :lengths
   has_many :weights
+  has_many :appointments
   has_many :veterinarians, through: :appointments
   belongs_to :veterinarian
 

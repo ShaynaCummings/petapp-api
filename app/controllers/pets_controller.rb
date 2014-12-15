@@ -1,24 +1,15 @@
 class PetsController < ApplicationController
+
   before_action :find_pet, only: [:show, :edit, :update, :destroy]
 
   def index
     @pets = Pet.all
-
     render json: @pets.as_json
   end
 
   def show
-    render json: @pet, include:   [
-                                  :veterinarian,
-                                  :lengths,
-                                  :weights,
-                                  :conditions,
-                                  :medications,
-                                  :vaccinations,
-                                  # :appointments,
-                                  # :expenses,
-                                  # :supplies
-                                  ]
+    render json: @pet, include: [ :lengths, :weights, :veterinarian, :conditions, :medications, :vaccinations, :appointments ]
+    # add expenses, supplies later
   end
 
   def new
@@ -44,8 +35,8 @@ private
   end
 
   def pets_params
-    #need to rewrite this eventually to include .require(:pet)
-    #http://stackoverflow.com/questions/13745689/getting-rails-api-and-strong-parameters-to-work-together
+    #need to rewrite strong params eventually to include .require(:pet) per this article
+    # http://stackoverflow.com/questions/13745689/getting-rails-api-and-strong-parameters-to-work-together
     params.permit(:name, :category, :breed, :birthdate, :sex, :adoption_date, :microchip_number, :picture_url, :user_id, :veterinarian_id)
   end
 
