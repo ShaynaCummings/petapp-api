@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214233913) do
+ActiveRecord::Schema.define(version: 20141215194812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141214233913) do
   create_table "appointments", force: true do |t|
     t.datetime "appointment_date"
     t.string   "description"
+    t.float    "appt_cost"
     t.integer  "pet_id"
     t.integer  "veterinarian_id"
     t.datetime "created_at",       null: false
@@ -28,10 +29,12 @@ ActiveRecord::Schema.define(version: 20141214233913) do
   create_table "conditions", force: true do |t|
     t.string   "name"
     t.string   "link_url"
+    t.date     "diagnosis_date"
     t.string   "description"
+    t.boolean  "ongoing"
     t.integer  "pet_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "expenses", force: true do |t|
@@ -46,17 +49,27 @@ ActiveRecord::Schema.define(version: 20141214233913) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "lengths", force: true do |t|
+    t.float    "length_amt"
+    t.string   "length_units"
+    t.date     "date_measured"
+    t.integer  "pet_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "medications", force: true do |t|
     t.string   "name"
     t.string   "rx_num"
     t.float    "dose_amt"
     t.string   "dose_units"
+    t.string   "dose_frequency"
+    t.float    "med_cost"
     t.string   "description"
-    t.string   "method"
-    t.integer  "condition_id"
+    t.date     "date_prescribed"
     t.integer  "pet_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "pets", force: true do |t|
@@ -66,19 +79,22 @@ ActiveRecord::Schema.define(version: 20141214233913) do
     t.date     "birthdate"
     t.string   "sex"
     t.date     "adoption_date"
+    t.string   "microchip_number"
     t.string   "picture_url"
     t.integer  "user_id"
     t.integer  "veterinarian_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "supplies", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "vendor"
+    t.float    "supply_cost"
     t.date     "purchase_date"
     t.date     "paid_date"
+    t.integer  "pet_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -112,12 +128,30 @@ ActiveRecord::Schema.define(version: 20141214233913) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  create_table "vaccinations", force: true do |t|
+    t.string   "name"
+    t.date     "date_given"
+    t.date     "next_due"
+    t.integer  "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "veterinarians", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "practice_name"
     t.string   "phone_number"
     t.string   "email_address"
+    t.integer  "pet_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "weights", force: true do |t|
+    t.float    "weight_amt"
+    t.string   "weight_units"
+    t.date     "date_measured"
     t.integer  "pet_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

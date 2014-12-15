@@ -5,9 +5,10 @@ class CreateMedications < ActiveRecord::Migration
       t.string :rx_num
       t.float :dose_amt
       t.string :dose_units
+      t.string :dose_frequency
+      t.float :med_cost
       t.string :description
-      t.string :method
-      t.belongs_to :condition
+      t.date :date_prescribed
       t.belongs_to :pet
 
       t.timestamps null: false
