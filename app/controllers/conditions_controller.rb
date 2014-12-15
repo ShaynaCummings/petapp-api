@@ -26,7 +26,7 @@ class ConditionsController < ApplicationController
   # end
 
   def conditions_params
-    params.require(:id).permit(:name, :link_url, :description, :pet_id)
+    params.permit(:name, :link_url, :description, :pet_id)
   end
 
 end
