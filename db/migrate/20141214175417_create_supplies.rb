@@ -4,8 +4,10 @@ class CreateSupplies < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :vendor
+      t.float :supply_cost
       t.date :purchase_date
       t.date :paid_date
+      t.belongs_to :pet
 
       t.timestamps null: false
     end

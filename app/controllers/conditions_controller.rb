@@ -1,32 +1,45 @@
 class ConditionsController < ApplicationController
+  before_action :find_pet
+  before_action :find_condition, only: [:show, :update, :destroy]
 
   def index
-    if params[:pet_id]
-      @pet = Pet.find(params[:pet_id])
-      @conditions = @pet.conditions
-    else
-      @conditions = Condition.all
-    end
-
+    @conditions = @pet.conditions
     render json: @conditions.as_json
   end
 
   def show
-    @condition = Condition.find(params[:id])
-
     render json: @condition
+  end
+
+  def new
+    @condition = Condition.new
+  end
+
+  def create
+    @condition = Condition.create(condition_params)
+  end
+
+  def update
+    @condition.update(condition_params)
+  end
+
+  def destroy
+    @condition.destroy
   end
 
 
   private
 
-# for refactoring later
-  # def get_pet_id
-    # @pet = Pet.find(params[:pet_id])
-  # end
+    def find_pet
+      @pet = Pet.find(params[:pet_id])
+    end
 
-  def conditions_params
-    params.permit(:name, :link_url, :description, :pet_id)
-  end
+    def find_condition
+      @condition = @pet.conditions.find(params[:id])
+    end
+
+    def condition_params
+      params.permit(:name, :link_url, :description, :diagnosis_date, :ongoing, :pet_id)
+    end
 
 end

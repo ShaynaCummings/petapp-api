@@ -1,20 +1,20 @@
-class ConditionsController < ApplicationController
+class AppointmentsController < ApplicationController
 
   def index
     if params[:pet_id]
       @pet = Pet.find(params[:pet_id])
-      @conditions = @pet.conditions
+      @appointments = @pet.appointments
     else
-      @conditions = Condition.all
+      @appointments = Appointment.all
     end
 
-    render json: @conditions.as_json
+    render json: @appointments.as_json
   end
 
   def show
-    @condition = Condition.find(params[:id])
+    @appointment = Appointment.find(params[:id])
 
-    render json: @condition
+    render json: @appointment
   end
 
 
@@ -25,7 +25,7 @@ class ConditionsController < ApplicationController
     # @pet = Pet.find(params[:pet_id])
   # end
 
-  def conditions_params
+  def appointments_params
     params.require(:id).permit(:name, :link_url, :description, :pet_id)
   end
 
