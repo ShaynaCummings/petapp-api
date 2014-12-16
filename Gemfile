@@ -10,6 +10,8 @@ gem 'rack-cors', require: 'rack/cors'
 
 gem 'rails_12factor', group: :production
 
+gem 'newrelic_rpm'
+
 # feed-related gems:
 gem 'feedjira'
 gem 'active_model_serializers'
