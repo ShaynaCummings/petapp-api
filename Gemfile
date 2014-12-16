@@ -12,6 +12,8 @@ gem 'rails_12factor', group: :production
 
 gem 'newrelic_rpm'
 
+gem 'bcrypt'
+
 # feed-related gems:
 gem 'feedjira'
 gem 'active_model_serializers'

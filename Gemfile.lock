@@ -213,6 +213,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt
   devise_token_auth
   dotenv-rails
   feedjira
