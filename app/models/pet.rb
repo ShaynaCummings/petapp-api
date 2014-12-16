@@ -1,5 +1,5 @@
 class Pet < ActiveRecord::Base
-  belongs_to :user
+  # belongs_to :user
   has_many :conditions
   has_many :medications
   has_many :vaccinations

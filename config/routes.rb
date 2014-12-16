@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: '/auth'
-
 
   resources :pets do
     resources :appointments
@@ -11,6 +9,8 @@ Rails.application.routes.draw do
     resources :lengths
     resources :weights
   end
+
+  resources :users
 
 #  and for the beta version
   # resources :expenses

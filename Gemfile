@@ -20,10 +20,10 @@ gem 'active_model_serializers'
 gem 'httparty'
 
 # auth gems:
-gem 'devise_token_auth'
-gem 'omniauth-github'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+# gem 'devise_token_auth'
+# gem 'omniauth-github'
+# gem 'omniauth-facebook'
+# gem 'omniauth-google-oauth2'
 
 # testing:
 group :development, :test do
