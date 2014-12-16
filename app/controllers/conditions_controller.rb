@@ -35,7 +35,7 @@ class ConditionsController < ApplicationController
     end
 
     def find_condition
-      @condition = Condition.find(params[:pet_id])
+      @condition = @pet.conditions.find(params[:id])
     end
 
     def condition_params

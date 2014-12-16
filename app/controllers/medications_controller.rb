@@ -35,7 +35,7 @@ class MedicationsController < ApplicationController
     end
 
     def find_medication
-      @medication = Medication.find(params[:pet_id])
+      @medication = Medication.find(params[:id])
     end
 
     def medication_params

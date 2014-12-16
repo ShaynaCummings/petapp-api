@@ -31,7 +31,7 @@ class LengthsController < ApplicationController
     end
 
     def find_length
-      @length = Length.find(params[:pet_id])
+      @length = @pet.lengths.find(params[:id])
     end
 
     def length_params

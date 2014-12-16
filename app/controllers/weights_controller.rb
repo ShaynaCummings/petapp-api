@@ -31,7 +31,7 @@ class WeightsController < ApplicationController
     end
 
     def find_weight
-      @weight = Weight.find(params[:pet_id])
+      @weight = @pet.weights.find(params[:id])
     end
 
     def weight_params
