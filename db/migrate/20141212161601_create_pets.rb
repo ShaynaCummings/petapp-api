@@ -9,8 +9,7 @@ class CreatePets < ActiveRecord::Migration
       t.date :adoption_date
       t.string :microchip_number
       t.string :picture_url
-      # t.belongs_to :user
-      t.belongs_to :veterinarian
+      t.belongs_to :user
 
       t.timestamps null: false
     end

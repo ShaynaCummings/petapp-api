@@ -1,7 +1,8 @@
 class CreateAppointments < ActiveRecord::Migration
   def change
     create_table :appointments do |t|
-      t.datetime :appointment_date
+      t.date :appointment_date
+      t.time :appointment_time
       t.string :description
       t.float :appt_cost
       t.belongs_to :pet
