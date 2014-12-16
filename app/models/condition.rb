@@ -19,14 +19,14 @@ class Condition < ActiveRecord::Base
 
 #   # methods for getting content from petmd via Feedjira
 
-  def fetch_conditions
+  def self.fetch_condition_entries
     url = %w[http://www.petmd.com/rss/cat.health]
     feeds = Feedjira::Feed.fetch_and_parse url
     feed = feeds['http://www.petmd.com/rss/cat.health']
     @entries = feed.entries
   end
 
-  def display_conditions
+  def display_condition_entries
     fetch_conditions
     render json: @entries
   end

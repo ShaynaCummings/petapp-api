@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# users = User.create ( [
+#   {
+#     name: 'testuser',
+#     email: 'test@gmail.com'
+#   }
+
+#   ])
+
 
 vets = Veterinarian.create([
 
@@ -36,7 +44,8 @@ pets = Pet.create([
     sex: 'male',
     adoption_date: '20110610',
     microchip_number: '2378sdhs2327',
-    veterinarian_id: 1
+    # veterinarian_id: 1,
+    user_id: 1
   },
 
 
@@ -47,7 +56,8 @@ pets = Pet.create([
     birthdate: '20130202',
     sex: 'female',
     adoption_date: '20110610',
-    veterinarian_id: 2
+    # veterinarian_id: 2,
+    user_id: 1
   }
 
 ])
@@ -55,7 +65,7 @@ pets = Pet.create([
 
 appointments = Appointment.create([
   {
-  appointment_date: '',
+  appointment_date: '20140521',
   description: 'checkup',
   appt_cost: 100.0,
   pet_id: 1,
@@ -63,7 +73,7 @@ appointments = Appointment.create([
   },
 
   {
-  appointment_date: '',
+  appointment_date: '20130401',
   description: 'getting shots',
   appt_cost: 40.0,
   pet_id: 1,
@@ -71,7 +81,7 @@ appointments = Appointment.create([
   },
 
   {
-  appointment_date: '',
+  appointment_date: '20131020',
   description: 'not feeling well',
   appt_cost: 50.0,
   pet_id: 2,
