@@ -14,6 +14,7 @@ end
     resources :weights
   end
 
+resources :entries, only: :index
 
 
 #  and for the beta version
