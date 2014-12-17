@@ -1,5 +1,4 @@
-module Api
-  class UsersController < ApplicationController
+class UsersController < ApplicationController
     # before_filter :authenticate, only: [:index]
 
     def index
@@ -24,5 +23,4 @@ module Api
       params.require(:user).permit(:name, :email, :password_digest, :token)
     end
 
-  end
 end

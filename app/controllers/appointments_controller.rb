@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
   def show
     @appointment = Appointment.find(params[:id])
 
-    render json: @appointment
+    render json: @appointment, include: [ :veterinarian ]
   end
 
 
@@ -26,7 +26,7 @@ class AppointmentsController < ApplicationController
   # end
 
   def appointments_params
-    params.require(:id).permit(:name, :link_url, :description, :pet_id)
+    params.require(:appointment).permit(:appointment_date, :appointment_time, :description, :appt_cost, :pet_id, :veterinarian_id)
   end
 
 end

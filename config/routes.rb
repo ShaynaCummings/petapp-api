@@ -16,6 +16,8 @@ resources :users do
   end
 end
 
+resources :veterinarians
+
 resources :entries, only: [:index, :show]
 
 
