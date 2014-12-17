@@ -97,7 +97,7 @@ conditions = Condition.create([
 
   {
     name: 'diabetes',
-    link_url: 'diabetes.com',
+    link_url: 'http://diabetes.com',
     diagnosis_date: '20120404',
     description: 'genetic',
     ongoing: true,
@@ -106,7 +106,7 @@ conditions = Condition.create([
 
   {
     name: 'obesity',
-    link_url: 'dogobesity.com',
+    link_url: 'http://www.dogobesity.com',
     description: 'genetic',
     ongoing: true,
     pet_id: 1
