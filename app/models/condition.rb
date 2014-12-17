@@ -19,17 +19,25 @@ class Condition < ActiveRecord::Base
 
 #   # methods for getting content from petmd via Feedjira
 
-  def self.fetch_condition_entries
-    url = %w[http://www.petmd.com/rss/cat.health]
-    feeds = Feedjira::Feed.fetch_and_parse url
-    feed = feeds['http://www.petmd.com/rss/cat.health']
-    @entries = feed.entries
-  end
+  # def generate_url
+  #   @url = "http://www.petmd.com/rss/" + @pet.category + ".health"
+  # end
 
-  def display_condition_entries
-    fetch_conditions
-    render json: @entries
-  end
+  # def self.fetch_condition_entries
+  #   feeds = Feedjira::Feed.fetch_and_parse @url
+  #   @entries = feeds.entries
+  # end
 
+  # def display_condition_entries
+  #   fetch_conditions
+  #   render json: @entries
+  # end
+
+# or I can just use httparty again! bc it returns json
+
+# response = HTTParty.get("http://www.petmd.com/rss/" + @pet.category + ".health")
+# @titles = {}
+# @titles = response['rss']['channel']['item'].map { |item| { item["title"], item["link"] ]  }
+# @links = response['rss']['channel']['item'].map { |item| item["link"] }
 
 end
