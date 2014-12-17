@@ -1,13 +1,18 @@
 class User < ActiveRecord::Base
-  has_secure_password
-  before_create :generate_token
 
   has_many :pets
 
- def generate_token
-  begin
-    self.token = SecureRandom.hex
-  end while self.class.exists?(token: token)
- end
+  # has_secure_password
+  # before_create :set_token
 
+  private
+
+    def set_token
+      return if token.present?
+      self.token = generate_token
+    end
+
+    def generate_token
+      SecureRandom.uuid.gsub(/\-/,'')
+    end
 end
