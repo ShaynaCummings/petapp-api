@@ -45,6 +45,7 @@ pets = Pet.create([
     adoption_date: '20110610',
     microchip_number: '2378sdhs2327',
     # veterinarian_id: 1,
+    picture_url: 'http://i.imgur.com/2TxaERV.jpg',
     user_id: 1
   },
 
@@ -57,6 +58,7 @@ pets = Pet.create([
     sex: 'female',
     adoption_date: '20110610',
     # veterinarian_id: 2,
+    picture_url: 'http://i.imgur.com/DM9Jc07.jpg'
     user_id: 1
   }
 
