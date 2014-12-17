@@ -14,6 +14,8 @@
 
 #   ])
 
+User.create(name: 'Shayna', email: 'shayna@email.com')
+
 
 vets = Veterinarian.create([
 
@@ -61,6 +63,19 @@ pets = Pet.create([
     picture_url: 'http://i.imgur.com/DM9Jc07.jpg'
     user_id: 1
   }
+
+  {
+    name: 'Gyoza',
+    category: 'cat',
+    breed: 'tiger cat',
+    birthdate: '20120217',
+    sex: 'male',
+    adoption_date: '20120217',
+    microchip_number: '125611',
+    # veterinarian_id: 1,
+    picture_url: 'http://i.imgur.com/yrt2yeY.jpg',
+    user_id: 1
+  },
 
 ])
 
