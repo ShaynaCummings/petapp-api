@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-namespace :api do
-  resources :users, defaults: {format: :json}
-end
+# namespace :api do
+#   resources :users, defaults: {format: :json}
+# end
 
+resources :users do
   resources :pets do
     resources :appointments
     resources :conditions
@@ -13,8 +14,9 @@ end
     resources :lengths
     resources :weights
   end
+end
 
-resources :entries, only: :index
+resources :entries, only: [:index, :show]
 
 
 #  and for the beta version
