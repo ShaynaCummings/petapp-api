@@ -36,7 +36,7 @@ private
   def pets_params
     #need to rewrite strong params eventually to include .require(:pet) per this article
     # http://stackoverflow.com/questions/13745689/getting-rails-api-and-strong-parameters-to-work-together
-    params.permit(:name, :category, :breed, :birthdate, :sex, :adoption_date, :microchip_number, :picture_url, :user_id, :veterinarian_id)
+    params.require(:pet).permit(:pet, :name, :category, :breed, :birthdate, :sex, :adoption_date, :microchip_number, :picture_url, :user_id, :veterinarian_id)
   end
 
 end
