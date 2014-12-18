@@ -39,15 +39,15 @@ vets = Veterinarian.create([
 pets = Pet.create([
 
   {
-    name: 'Fido',
+    name: 'Mr. Sprinkles',
     category: 'dog',
     breed: 'sheep dog',
     birthdate: '20110101',
     sex: 'male',
-    adoption_date: '20110610',
+    adoption_date: '20090610',
     microchip_number: '2378sdhs2327',
     # veterinarian_id: 1,
-    picture_url: 'http://i.imgur.com/2TxaERV.jpg',
+    picture_url: 'http://i.imgur.com/kZnCGl8.jpg',
     user_id: 1
   },
 
@@ -60,7 +60,7 @@ pets = Pet.create([
     sex: 'female',
     adoption_date: '20110610',
     # veterinarian_id: 2,
-    picture_url: 'http://i.imgur.com/DM9Jc07.jpg',
+    picture_url: 'http://i.imgur.com/vqmYeBD.jpg',
     user_id: 1
   }
 
@@ -68,14 +68,14 @@ pets = Pet.create([
     name: 'Gyoza',
     category: 'cat',
     breed: 'tiger cat',
-    birthdate: '20120217',
+    birthdate: '20110217',
     sex: 'male',
     adoption_date: '20120217',
     microchip_number: '125611',
     # veterinarian_id: 1,
-    picture_url: 'http://i.imgur.com/yrt2yeY.jpg',
+    picture_url: 'http://i.imgur.com/RJvFrYv.jpg',
     user_id: 1
-  },
+  }
 
 ])
 
