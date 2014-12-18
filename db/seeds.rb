@@ -62,7 +62,7 @@ pets = Pet.create([
     # veterinarian_id: 2,
     picture_url: 'http://i.imgur.com/vqmYeBD.jpg',
     user_id: 1
-  }
+  },
 
   {
     name: 'Gyoza',
