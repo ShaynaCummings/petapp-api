@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 #   resources :users, defaults: {format: :json}
 # end
 
-resources :users do
+# resources :users do
   resources :pets do
     resources :appointments
     resources :conditions
@@ -14,12 +14,13 @@ resources :users do
     resources :lengths
     resources :weights
   end
-end
+# end
 
 resources :veterinarians
 
 resources :entries, only: [:index, :show]
 
+resources :users, only: [:show]
 
 #  and for the beta version
   # resources :expenses
