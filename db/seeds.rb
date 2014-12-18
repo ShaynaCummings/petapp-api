@@ -60,7 +60,7 @@ pets = Pet.create([
     sex: 'female',
     adoption_date: '20110610',
     # veterinarian_id: 2,
-    picture_url: 'http://i.imgur.com/DM9Jc07.jpg'
+    picture_url: 'http://i.imgur.com/DM9Jc07.jpg',
     user_id: 1
   }
 
